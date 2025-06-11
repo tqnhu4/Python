@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Basic App</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Trang chủ</a> |
+        <a href="{{ url_for('about') }}">Giới thiệu</a> |
+        <a href="{{ url_for('form') }}">Nhập tên</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Contact - My Portfolio{% endblock %}
+{% block content %}
+<h2>Contact Me</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ form.name() }}<br>
+    {{ form.email.label }} {{ form.email() }}<br>
+    {{ form.message.label }} {{ form.message() }}<br>
+    {{ form.submit() }}
+</form>
+{% endblock %}

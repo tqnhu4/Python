@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 30px; background: #f0f8ff; }
+        form { margin-bottom: 20px; }
+        .weather-box { border: 1px solid #ccc; padding: 20px; background: #fff; display: inline-block; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>🌤 Ứng dụng Thời tiết (Flask)</h1>
+    <form method="POST">
+        <input type="text" name="city" placeholder="Nhập tên thành phố..." required>
+        <button type="submit">Xem thời tiết</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if weather %}
+    <div class="weather-box">
+        <h2>{{ weather.city }}</h2>
+        <p><strong>Thời tiết:</strong> {{ weather.description }}</p>
+        <p><strong>Nhiệt độ:</strong> {{ weather.temperature }}°C</p>
+        <p><strong>Cảm giác như:</strong> {{ weather.feels_like }}°C</p>
+        <p><strong>Độ ẩm:</strong> {{ weather.humidity }}%</p>
+        <p><strong>Gió:</strong> {{ weather.wind }} m/s</p>
+    </div>
+    {% endif %}
+</body>
+</html>

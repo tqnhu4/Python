@@ -1,0 +1,4 @@
+python
+hangman
+banana
+machine
