@@ -1,0 +1,24 @@
+<!-- templates/edit_note.html -->
+{% extends "base.html" %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full text-center">
+        <h1 class="text-3xl font-bold text-yellow-600 mb-6">{{ page_title }}</h1>
+        
+        <form method="POST" action="{{ url_for('edit_note', note_id=note.id) }}" class="space-y-4">
+            <input type="text" name="title" placeholder="Note Title" value="{{ note.title }}"
+                   class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+            <textarea name="content" placeholder="Note Content" rows="6"
+                      class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required>{{ note.content }}</textarea>
+            <button type="submit" 
+                    class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-4 rounded-md transition duration-300">
+                Update Note
+            </button>
+        </form>
+        <a href="{{ url_for('notes_list') }}" class="text-yellow-500 hover:underline mt-4 block">Back to Notes List</a>
+    </div>
+</div>
+{% endblock %}
