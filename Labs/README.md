@@ -1,4 +1,3 @@
-# python-tutorials
 # 🐍 7-Day Python Learning Roadmap for Beginners
 
 Welcome to your accelerated Python learning journey! This document is designed to help you, a complete beginner, grasp the fundamentals of Python within seven days, focusing on rapid learning and practical application.
