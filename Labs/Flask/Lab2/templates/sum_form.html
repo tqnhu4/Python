@@ -1,0 +1,32 @@
+<!-- templates/sum_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Two Numbers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full text-center">
+        <h1 class="text-3xl font-bold text-green-600 mb-6">Calculate Sum of Two Numbers</h1>
+        
+        <!-- Display sum result if available -->
+        {% if sum_result is not none %}
+            <p class="text-green-600 text-xl font-semibold mb-4">Result: {{ sum_result }}</p>
+        {% endif %}
+
+        <form method="POST" action="/calculate_sum" class="space-y-4">
+            <input type="number" name="num1" placeholder="First Number" step="any"
+                   class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+            <input type="number" name="num2" placeholder="Second Number" step="any"
+                   class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+            <button type="submit" 
+                    class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-md transition duration-300">
+                Calculate Sum
+            </button>
+        </form>
+        <a href="/" class="text-green-500 hover:underline mt-4 block">Back to Home</a>
+    </div>
+</body>
+</html>
